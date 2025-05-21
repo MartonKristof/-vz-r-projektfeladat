@@ -1,0 +1,218 @@
+/* Alap stílusok - dark, üveghatás */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+    color: #f1f1f1;
+}
+
+.glass {
+    background: rgba(40, 44, 52, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(67, 72, 155, 0.664);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.responsive-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.answer-btn {
+    margin: 8px 0;
+    padding: 12px 20px;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.answer-btn:hover:not(:disabled) {
+    background: rgba(255,255,255,0.18);
+}
+.correct {
+    background-color: #2ecc40 !important;
+    color: #222 !important;
+}
+.incorrect {
+    background-color: #e74c3c !important;
+    color: #fff !important;
+}
+#next-btn {
+    margin-top: 1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background: #444;
+    color: #f1f1f1;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#next-btn:disabled {
+    background: #222;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Navigáció */
+nav {
+    width: 100%;
+    background: rgba(30, 34, 40, 0.85);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    position: relative; 
+}
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 30px ;
+}
+.nav-links a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.nav-links a:hover {
+    color: #2ecc40;
+}
+.hamburger {
+    padding-right: 40px;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #f1f1f1;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Táblázat */
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: rgba(40, 44, 52, 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.responsive-table th, .responsive-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.responsive-table th {
+    background: rgba(255,255,255,0.08);
+    color: #2ecc40;
+}
+.responsive-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Töréspontok és színváltás */
+@media (max-width: 1024px) {
+    body {
+        background: linear-gradient(135deg, #232526 0%, #2c3e50 100%);
+    }
+    .glass {
+        max-width: 60vw;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #232526 0%, #1a2226 100%);
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: rgba(30, 34, 40, 0.95);
+        position: absolute;
+        left: 0;
+        top: 56px;
+        padding: 1rem 0;
+        gap: 0;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .nav-links a {
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+@media (max-width: 576px) {
+    body {
+        background: linear-gradient(135deg, #16181a 0%, #232526 100%);
+    }
+    .responsive-table, .responsive-table thead, .responsive-table tbody, .responsive-table tr, .responsive-table th, .responsive-table td {
+        display: block;
+        width: 100%;
+    }
+    .responsive-table thead {
+        display: none;
+    }
+    .responsive-table tr {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        background: rgba(40, 44, 52, 0.85);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .responsive-table td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-bottom: none;
+        position: relative;
+    }
+    .responsive-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #2ecc40;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+}
+
