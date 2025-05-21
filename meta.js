@@ -211,7 +211,7 @@ const hamburger = document.getElementById('hamburger');
         let selectedQuestions = [];
 
         function getRandomQuestions() {
-            // Véletlen keverés, majd az első 5 kérdés kiválasztása
+            
             const shuffled = questions
                 .map(q => ({ q, sort: Math.random() }))
                 .sort((a, b) => a.sort - b.sort)
@@ -226,7 +226,7 @@ const hamburger = document.getElementById('hamburger');
 
         function loadQuestion() {
             nextBtn.disabled = true;
-            questionDiv.textContent = selectedQuestions[currentQuestion].question;
+            questionDiv.innerHTML = `<p>${selectedQuestions[currentQuestion].question}</p>`; 
             answersDiv.innerHTML = '';
             scoreDiv.textContent = "";
             selectedQuestions[currentQuestion].answers.forEach((ans, idx) => {
@@ -286,7 +286,7 @@ const hamburger = document.getElementById('hamburger');
             updateResultsTable();
         }
 
-        // Táblázat frissítése
+        
         function updateResultsTable() {
             let quizDiv = document.querySelector('.glass');
             if (!quizDiv) return;
@@ -320,6 +320,6 @@ const hamburger = document.getElementById('hamburger');
             });
         }
 
-        // Indítás
+        
         selectedQuestions = getRandomQuestions();
         loadQuestion();

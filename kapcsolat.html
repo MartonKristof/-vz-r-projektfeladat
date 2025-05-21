@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Kapcsolatfelvételi űrlap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">Kapcsolat</span>
+            <div class="nav-links">
+                <a href="tanganyag.html">Tananyag</a>
+                <a href="tudasproba.html">Kvíz</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <section class="glass">
+        <form id="kapcsi" action="urlap">
+            <div class="be">
+                <label for="nev">Név:</label>
+                <input type="text" id="nev" name="nev">
+            </div>
+            <div class="be">
+                <label for="email">E-mail cím:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="be">
+                <label for="uzenet">Üzenet:</label>
+                <textarea id="uzenet" name="uzenet"></textarea>
+            </div>
+            <button type="submit" id="next-btn">Küldés</button>
+        </form>
+    </section>
+    <script src="meta.js"></script>
+
+</body>
+</html>

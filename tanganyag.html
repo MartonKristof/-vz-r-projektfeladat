@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tananyag</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">Tananyag</span>
+            <div class="nav-links">
+                <a href="tanganyag.html">Tananyag</a>
+                <a href="tudasproba.html">Kvíz</a>
+                <a href="kapcsolat.html">Kapcsolat</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <section class="glass">
+        <h2>Választó lekérdezés</h2>
+        <p>A <b><i>SELECT</i></b> lekérdezés az SQL-ben az adatok lekérdezésére, vagyis kiválasztására szolgál adatbázis-táblákból. Segítségével megadható, hogy mely oszlopokból és milyen feltételek szerint szeretnénk adatokat visszakapni. A lekérdezés kiegészíthető szűréssel (<i>`WHERE`</i>), rendezéssel (<i>`ORDER BY`</i>), csoportosítással (<i>`GROUP BY`</i>) és összesítő függvényekkel is. A SELECT lekérdezés nem módosítja az adatokat, csupán olvasást végez. Használható egyetlen vagy több tábla adatainak lekérdezésére is, például összekapcsolás (<i>`JOIN`</i>) révén. Ez az SQL nyelv egyik legalapvetőbb és leggyakrabban használt utasítása.</p>
+        <code><pre>SELECT id, nev, eletkor, beosztas
+FROM dolgozok;
+        </code></pre>
+        <b><u>Használata:</u></b>
+        <p>
+            <ul>
+                <li><i>SELECT:</i> ez az utasítás kezdi a lekérdezést, és azt jelenti, hogy adatokat szeretnénk lekérni.</li>
+                <li>id, nev, eletkor, beosztas: ezek azok az oszlopok, amelyeket látni szeretnénk a visszaadott eredményben.</li>
+                <li><i>FROM dolgozok:</i> azt mondja meg, hogy a dolgozok nevű táblából kérjük le az adatokat.</li>
+            </ul>
+            Ez a lekérdezés kiírja a dolgozok táblában szereplő összes dolgozó azonosítóját, nevét, életkorát és beosztását. 
+        </p>
+        <p>Erdemény:</p>
+        <p id="max"><img src="slect.png" alt="Választó lekérdezés eredmény" title="Választó lekérdezés eredmény" id="tankep"></p>
+    </section>
+    <section class="glass">
+        <h2>Frissítő lekérdezés</h2>
+        <p>Az <b><i>UPDATE</i></b> lekérdezés meglévő adatok módosítására szolgál egy adatbázis-táblában. Segítségével megadhatjuk, mely oszlop(ok) értékét szeretnénk frissíteni, és a <i>WHERE</i> feltétellel azt is meghatározhatjuk, hogy mely sor(ok)ban történjen a módosítás. Ha a <i>WHERE</i> feltételt kihagyjuk, akkor az összes sorban végrehajtódik a frissítés. Ezért mindig fontos pontosan megadni, mely rekordokat akarjuk módosítani. Az <b><i>UPDATE</i></b> nem hoz létre új sort, csak meglévő adatot változtat meg. Gyakran használják például hibás adatok javítására vagy státuszok, értékek frissítésére.</p>
+        <pre><code>UPDATE dolgozok
+SET eletkor = 36
+WHERE nev = 'Tóth Péter';
+            </code></pre>
+        <b><u>Használata:</u></b>
+        <p>
+            <ul>
+                <li><i>Update:</i> Ez a parancs kezdi el a frísitő lekérdezést, ez után meg kell adnunk annak a tablának a nevét amelyikben szeretnénk adatot módodosítani</li>
+                <li><i>SET:</i> Adjuk meg, mit szeretnénk módosítani.</li>
+                <li><i>WHERE:</i>Ez a rész határozza meg, mely sor(ok)ra vonatkozik a frissítés <span class="fontos"> ha ezt kihagyjuk, minden sor frissül!</span></li>
+            </ul>
+            A dolgozok táblában Tóth Péter életkor értéke frissül 36-ra.
+        </p>
+    </section>
+    <Section class="glass">
+        <h2>Törlő lekérdezés</h2>
+        <p></p>
+        <pre><code>DELETE FROM dolgozok
+WHERE nev = 'Tóth Péter';
+        </code></pre>
+        <b><u>Használata:</u></b>
+        <p>
+            <ul>
+                <li><i>DELETE:</i> Ez a parancs kezdi el a törlő lekérdezést, ez után meg kell adnunk annak a tablának a nevét amelyikben szeretnénk adatot törölni</li>
+                <li><i>WHERE:</i>Ha ezt a feltételt kihagyod, <span class="fontos">minden sor törlődni fog a táblából</span> ezért nagyon óvatosan kell használni!</li>
+            </ul>
+            Ez a parancs a dolgozok táblából törli azt a sort, ahol a nev mező értéke "Tóth Péter"
+        </p>
+    </Section>
+    <script src="meta.js"></script>
+</body>
+</html>
