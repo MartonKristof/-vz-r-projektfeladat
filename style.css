@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -55,7 +54,7 @@ li {
     background: rgba(255,255,255,0.18);
 }
 .correct {
-    background-color: #68b6ff !important;
+    background-color: rgb(82, 238, 82) !important;
     color: #222 !important;
 }
 .incorrect {
@@ -77,6 +76,11 @@ li {
     transition: background 0.3s, color 0.3s;
     margin-top: 0.5rem;
 }
+#next-btn:hover:not(:disabled) {
+    background: #444;
+    color: #fff;
+}
+
 
 #next-btn:disabled {
     background: #222;
@@ -189,6 +193,7 @@ nav {
     gap: 1rem;
     margin-bottom: 1.2rem;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 #kapcsi label {
@@ -215,9 +220,10 @@ nav {
     transition: border 0.3s;
     flex: 1;
     margin-bottom: 0;
-
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
-
 
 #kapcsi textarea {
     min-height: 80px;
@@ -234,15 +240,40 @@ nav {
     max-width: 100%;
 }
 
+#send-btn {
+    background: #333;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 6px;
+    padding: 0.9rem 0.6rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 0.5rem;
+}
+#send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+#send-btn:hover:not(:disabled) {
+    background: #444;
+    color: #fff;
+}
 
 footer {
-    background: rgba(30, 34, 40, 0.85);
+    background: rgba(30, 34, 40, 0.80);
     color: #f1f1f1;
     padding: 1rem;
     text-align: center;
-    position: relative;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
+    z-index: 99;
+    backdrop-filter: blur(2px);
 }
 
 
@@ -282,6 +313,18 @@ footer {
     }
     .hamburger {
         display: flex;
+    }
+}
+@media (max-width: 600px) {
+    #kapcsi .be {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+    }
+    #kapcsi label {
+        text-align: left;
+        min-width: unset;
+        margin-bottom: 0.2rem;
     }
 }
 @media (max-width: 576px) {
