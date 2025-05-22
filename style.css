@@ -1,6 +1,7 @@
 html, body {
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -32,11 +33,6 @@ li {
 .glass:hover {
     box-shadow: 0 12px 48px 0 rgba(112, 118, 247, 0.664);
     transition: box-shadow 0.3s cubic-bezier(0.2, 4, 0.2, 4);
-}
-
-.glass, #kapcsi, #kapcsi .be {
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .responsive-img {
